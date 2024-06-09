@@ -82,5 +82,30 @@ public class SearchSteps extends BrowserLaunch {
 		browser.navigate().back();
 
 	}
+	
+	
+	@When("i select From Location as ([^\"]*)$")
+	public void i_select_from_location_as(String from) {
+		MakeMyTripOneWaySearchPage M = new MakeMyTripOneWaySearchPage(browser);
+		M.ClickFromLocation();
+		M.SelectDataFromList(from);
+		//test.log(Status.INFO, "Select the from location as :"+"PNQ");
+	}
+	
+	@When("i select To Location as ([^\"]*)$")
+	public void i_select_to_location_as(String to) {
+		MakeMyTripOneWaySearchPage M = new MakeMyTripOneWaySearchPage(browser);
+		M.ClickToLocation();
+		M.SelectDataFromList(to);
+		//test.log(Status.INFO, "Select the from location as :"+"PNQ");
+	}
+	
+	@When("Select date as ([^\"]*)$")
+	public void select_date_as(String date) {
+		MakeMyTripOneWaySearchPage M = new MakeMyTripOneWaySearchPage(browser);
+		M.SelectDate(date);
+		//test.log(Status.INFO, "Select the Date as " +"25");
+	}
+
 
 }
